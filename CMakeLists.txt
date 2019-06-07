@@ -1,9 +1,8 @@
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 2.8.2)
+set(CMAKE_LEGACY_CYGWIN_WIN32 0)
+set(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")
+
 project(GEN_Labo5)
-
-set(CMAKE_CXX_STANDARD 14)
-
-add_executable(GEN_Labo5 main.cpp)
 
 include(CTest)
 
@@ -15,10 +14,10 @@ endif()
 
 include(DownloadProject.cmake)
 download_project(PROJ                googletest
-        GIT_REPOSITORY      https://github.com/google/googletest.git
-        GIT_TAG             master
-        ${UPDATE_DISCONNECTED_IF_AVAILABLE}
-        )
+                 GIT_REPOSITORY      https://github.com/google/googletest.git
+                 GIT_TAG             master
+                 ${UPDATE_DISCONNECTED_IF_AVAILABLE}
+)
 
 # Prevent GoogleTest from overriding our compiler/linker options
 # when building with Visual Studio
@@ -32,10 +31,10 @@ add_subdirectory(${googletest_SOURCE_DIR} ${googletest_BINARY_DIR})
 # required directories to the header search path ourselves.
 if (CMAKE_VERSION VERSION_LESS 2.8.11)
     include_directories("${gtest_SOURCE_DIR}/include"
-            "${gmock_SOURCE_DIR}/include")
+                        "${gmock_SOURCE_DIR}/include")
 endif()
 
 # Trivial example using gtest and gmock
-add_executable(example main.cpp)
-target_link_libraries(example gtest gmock_main)
+add_executable(GEN_Labo05 main.cpp)
+target_link_libraries(GEN_Labo05 gtest gmock_main)
 add_test(NAME example_test COMMAND example)
