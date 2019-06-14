@@ -11,6 +11,8 @@ public:
 
     Movie( const std::string& title, int priceCode = REGULAR );
 
+    Movie();
+
     int getPriceCode() const;
     void setPriceCode( int arg );
     std::string getTitle() const;
@@ -19,6 +21,8 @@ private:
     std::string _title;
     int _priceCode;
 };
+
+inline Movie::Movie() = default;
 
 inline Movie::
 Movie( const std::string& title, int priceCode )
@@ -34,5 +38,7 @@ setPriceCode( int arg ) { _priceCode = arg; }
 
 inline std::string Movie::
 getTitle() const { return _title; }
+
+
 
 #endif // MOVIE_H

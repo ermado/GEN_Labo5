@@ -6,6 +6,7 @@
 class Rental {
 public:
     Rental( const Movie& movie, int daysRented );
+    Rental();
 
     int getDaysRented() const;
     const Movie& getMovie() const;
@@ -25,5 +26,8 @@ getDaysRented() const { return _daysRented; }
 
 inline const Movie& Rental::
 getMovie() const { return _movie; }
+
+inline Rental::Rental() = default;
+
 
 #endif // RENTAL_H
