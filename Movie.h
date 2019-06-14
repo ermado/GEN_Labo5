@@ -4,8 +4,11 @@
 #include <string>
 
 
-//const double movieAmount[] = {2, 3, 1,5};
-//enum movieType {REGULAR, NEW_RELEASE, CHILDRENS};
+// ecrire pourquoi in fait ca!!!!
+enum movieType {REGULAR, NEW_RELEASE, CHILDRENS};
+double movieBaseAmount[] = {2, 3, 1,5};
+double movieDayLimit[] = {2, 0, 3};
+const double BASETAX = 1.5;
 
 /***************************************************************************************************
  * MainClass
@@ -16,8 +19,11 @@ public:
 
     Movie(const std::string& title);
 
+    // abstraire le price (ces deux methodes)
     int getPriceCode() const;
     void setPriceCode( int arg );
+    
+
     std::string getTitle() const;
 
     virtual double getAmount(int daysRented) const = 0;
@@ -42,7 +48,6 @@ public:
     int getRenterPoints() const override;
 
 };
-
 
 class NewReleaseMovie : public Movie {
 
@@ -83,20 +88,20 @@ getTitle() const { return _title; }
  **************************************************************************************************/
 
 inline double RegularMovie::getAmount(int daysRented) const {
-    double amount = 2;
-    if (daysRented > 2)
-        amount += (daysRented - 2) * 1.5;
+    double amount = movieBaseAmount[REGULAR];
+    if (daysRented > movieDayLimit[REGULAR])
+        amount += (daysRented - movieDayLimit[REGULAR]) * BASETAX;
     return amount;
 }
 
 inline double NewReleaseMovie::getAmount(int daysRented) const {
-    return daysRented * 3;
+    return daysRented * movieBaseAmount[NEW_RELEASE];
 }
 
 inline double ChildrenMovie::getAmount(int daysRented) const {
-    double amount = 1.5;
-    if (daysRented > 3)
-        amount += (daysRented - 3) * 1.5;
+    double amount = movieBaseAmount[CHILDRENS];
+    if (daysRented > movieDayLimit[CHILDRENS])
+        amount += (daysRented - movieDayLimit[CHILDRENS]) * BASETAX;
     return amount;
 
 }
