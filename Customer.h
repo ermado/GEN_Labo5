@@ -14,7 +14,7 @@ public:
     void addRental( const Rental& arg );
     std::string getName() const;
     std::string statement();
-    std::vector<Rental> getRentals();
+    std::vector<Rental>& getRentals();
 
 private:
     std::string _name;
@@ -34,7 +34,7 @@ addRental( const Rental& arg ) { _rentals.push_back( arg ); }
 inline std::string Customer::
 getName() const { return _name; }
 
-inline std::vector<Rental> Customer::getRentals() {
+inline std::vector<Rental>& Customer::getRentals() {
     return _rentals;
 }
 

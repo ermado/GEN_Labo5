@@ -16,6 +16,8 @@ public:
 
     Statement(Customer* customer) {
         this->customer = *customer;
+        this->frequentRenterPoints = 0;
+        this->totalAmount = 0;
     }
 
     /**
