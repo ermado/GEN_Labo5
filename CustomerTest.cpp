@@ -30,6 +30,17 @@ TEST(StatementTest, CanWriteStatementForCustomer) {
             "You earned 4 frequent renter points");
 }
 
+TEST(MovieTypesTest, CorrectNumberRentedPoints) {
+
+    RegularMovie rMov("Inception");
+    NewReleaseMovie nrMov("It 2");
+    ChildrenMovie chMov("The Lion King");
+
+    ASSERT_EQ(rMov.getRenterPoints(), 1);
+    ASSERT_EQ(nrMov.getRenterPoints(), 2);
+    ASSERT_EQ(chMov.getRenterPoints(), 1);
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest();
     //::testing::InitGoogleMock(&argc, argv);
