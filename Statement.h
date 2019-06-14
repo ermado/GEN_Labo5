@@ -13,6 +13,15 @@ private:
     Customer customer;
 
 public:
+
+    Statement(Customer* customer) {
+        this->customer = *customer;
+    }
+
+    /**
+     * Calcule la facture du client
+     * @return
+     */
     std::string toString() {
         std::ostringstream result;
         auto iter = this->customer.getRentals().begin();

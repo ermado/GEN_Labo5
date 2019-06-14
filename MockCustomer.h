@@ -15,8 +15,8 @@ class MockCustomer : public Customer {
 
 public:
 
-MOCK_METHOD1(addRental, void(const Rental&()));
-MOCK_CONST_METHOD0(getName, const std::string());
+    MOCK_METHOD1(addRental, void(const Rental&()));
+    MOCK_CONST_METHOD0(getName, const std::string());
 
 
 };
