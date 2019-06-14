@@ -6,8 +6,8 @@
 
 // ecrire pourquoi in fait ca!!!!
 enum movieType {REGULAR, NEW_RELEASE, CHILDRENS};
-double movieBaseAmount[] = {2, 3, 1,5};
-double movieDayLimit[] = {2, 0, 3};
+static double movieBaseAmount[] = {2, 3, 1.5};
+static double movieDayLimit[] = {2, 0, 3};
 const double BASETAX = 1.5;
 
 /***************************************************************************************************
@@ -22,7 +22,7 @@ public:
     // abstraire le price (ces deux methodes)
     int getPriceCode() const;
     void setPriceCode( int arg );
-    
+
 
     std::string getTitle() const;
 
