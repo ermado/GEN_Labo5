@@ -5,19 +5,19 @@
 
 class Rental {
 public:
-    Rental( const Movie& movie, int daysRented );
+    Rental(Movie *movie, int daysRented );
     Rental();
 
     int getDaysRented() const;
     const Movie& getMovie() const;
 
 private:
-    Movie _movie;
+    Movie* _movie;
     int _daysRented;
 };
 
 inline Rental::
-Rental( const Movie& movie, int daysRented )
+Rental(Movie *movie, int daysRented )
         : _movie( movie )
         , _daysRented( daysRented ) {}
 
@@ -25,7 +25,7 @@ inline int Rental::
 getDaysRented() const { return _daysRented; }
 
 inline const Movie& Rental::
-getMovie() const { return _movie; }
+getMovie() const { return *_movie; }
 
 inline Rental::Rental() = default;
 

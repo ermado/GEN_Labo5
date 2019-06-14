@@ -30,11 +30,16 @@ public:
         auto iter_end = this->customer.getRentals().end();
         result << "Rental Record for " << this->customer.getName() << "\n";
 
+        int thisPoints = 0;
         for ( ; iter != iter_end; ++iter ) {
             double thisAmount = 0;
+
             Rental each = *iter;
 
-            // determine amounts for each line
+
+            thisAmount = each.getMovie().getAmount(each.getDaysRented());
+            thisPoints += each.getMovie().getRenterPoints();
+/*            // determine amounts for each line
             switch ( each.getMovie().getPriceCode() ) {
                 case Movie::REGULAR:
                     thisAmount += 2;
@@ -49,14 +54,16 @@ public:
                     if ( each.getDaysRented() > 3 )
                         thisAmount += ( each.getDaysRented() - 3 ) * 1.5;
                     break;
-            }
+            }*/
 
-            // add frequent renter points
+            this->frequentRenterPoints = thisPoints;
+
+           /* // add frequent renter points
             this->frequentRenterPoints++;
             // add bonus for a two day new release rental
             if ( ( each.getMovie().getPriceCode() == Movie::NEW_RELEASE )
                  && each.getDaysRented() > 1 ) this->frequentRenterPoints++;
-
+*/
             // show figures for this rental
             result << "\t" << each.getMovie().getTitle() << "\t"
                    << thisAmount << "\n";

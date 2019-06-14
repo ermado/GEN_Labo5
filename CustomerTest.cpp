@@ -11,16 +11,16 @@ TEST(StatementTest, CanWriteStatementForCustomer) {
 
     Customer customer("Edoardo Carpita");
 
-    Movie movie1("Top Gun");
-    Rental rental1(movie1, 32);
+    RegularMovie movie1("Top Gun");
+    Rental rental1(&movie1, 32);
     customer.addRental(rental1);
 
-    Movie movie2("Titanic", 1);
-    Rental rental2(movie2, 4);
+    NewReleaseMovie movie2("Titanic");
+    Rental rental2(&movie2, 4);
     customer.addRental(rental2);
 
-    Movie movie3("Invade Poland for dummies", 2);
-    Rental rental3(movie3, 150);
+    ChildrenMovie movie3("Invade Poland for dummies");
+    Rental rental3(&movie3, 150);
     customer.addRental(rental3);
 
     std::string st = customer.statement();
