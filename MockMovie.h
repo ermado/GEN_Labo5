@@ -11,11 +11,11 @@
 class MockRegularMovie : public Movie {
 public:
 
-    MockRegularMovie() {}
     MOCK_METHOD1(setTitle, std::string(void()));
     MOCK_CONST_METHOD0(getTitle, std::string());
-    MOCK_CONST_METHOD1(getAmount, double(void()));
     MOCK_CONST_METHOD0(getRenterPoints, int());
+    MOCK_CONST_METHOD1(getAmount, double(int));
+
 
 };
 
@@ -24,8 +24,12 @@ public:
 
     MOCK_METHOD1(setTitle, std::string(void()));
     MOCK_CONST_METHOD0(getTitle, std::string());
-    MOCK_CONST_METHOD1(getAmount, double(void()));
+    MOCK_CONST_METHOD1(getAmount, int(double()));
     MOCK_CONST_METHOD0(getRenterPoints, int());
+
+
+    // virtual double getAmount(int daysRented) const = 0;
+    // virtual int getRenterPoints() const = 0;
 
 };
 
@@ -34,7 +38,7 @@ public:
 
     MOCK_METHOD1(setTitle, std::string(void()));
     MOCK_CONST_METHOD0(getTitle, std::string());
-    MOCK_CONST_METHOD1(getAmount, double(void()));
+    MOCK_CONST_METHOD1(getAmount, int(double()));
     MOCK_CONST_METHOD0(getRenterPoints, int());
 
 };

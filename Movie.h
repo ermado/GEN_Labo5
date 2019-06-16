@@ -68,7 +68,4 @@ public:
 };
 
 
-
-
-
 #endif // MOVIE_H
