@@ -19,25 +19,16 @@ return result.str();
 std::string Statement::processRentals() {
 
     std::ostringstream result;
-    auto iter = this->customer.getRentals().begin();
-    auto iter_end = this->customer.getRentals().end();
-
-    for ( ; iter != iter_end; ++iter ) {
+    for (auto &rental :  this->customer.getRentals()) {
         double amountForThisRental = 0;
 
-        Rental each = *iter;
-
-        amountForThisRental = each.getMovie().getAmount(each.getDaysRented());
-        this->frequentRenterPoints += each.getMovie().getRenterPoints();
+        amountForThisRental = rental.getMovie().getAmount(rental.getDaysRented());
+        this->frequentRenterPoints += rental.getMovie().getRenterPoints();
 
         // show figures for this rental
-        result << each.toString(amountForThisRental);
+        result << rental.toString(amountForThisRental);
 
         this->totalAmount += amountForThisRental;
     }
     return result.str();
-}
-
-int Statement::getFrequentRenterPoints() const {
-    return this->frequentRenterPoints;
 }

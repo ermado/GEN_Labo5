@@ -23,7 +23,6 @@ public:
 
     std::string toString();
     std::string processRentals();
-    int getFrequentRenterPoints() const;
 
 };
 
