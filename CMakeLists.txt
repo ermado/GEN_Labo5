@@ -34,7 +34,10 @@ if (CMAKE_VERSION VERSION_LESS 2.8.11)
                         "${gmock_SOURCE_DIR}/include")
 endif()
 
+
+
+
 # Trivial example using gtest and gmock
-add_executable(GEN_Labo05 main.cpp)
+add_executable(GEN_Labo05 main.cpp CustomerTest.cpp Movie.cpp Customer.cpp Statement.cpp)
 target_link_libraries(GEN_Labo05 gtest gmock_main)
 add_test(NAME example_test COMMAND example)
