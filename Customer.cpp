@@ -9,7 +9,6 @@ using std::vector;
 using namespace std;
 
 string Customer::statement() {
-
     Statement st(this);
     return st.toString();
 }

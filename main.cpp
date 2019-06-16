@@ -1,12 +1,10 @@
 #include <iostream>
 
 #include "Customer.h"
-#include "Customer.cpp"
 #include <iostream>
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
 #include "MockRental.h"
-#include "MockMovie.h"
 #include "MockCustomer.h"
 #include "Statement.h"
 

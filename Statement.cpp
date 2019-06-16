@@ -1,16 +1,16 @@
 #include "Statement.h"
 
 std::string Statement::toString() {
-this->frequentRenterPoints = 0;
-std::ostringstream result;
-result << "Rental Record for " << this->customer.getName() << "\n";
+    this->frequentRenterPoints = 0;
+    std::ostringstream result;
+    result << "Rental Record for " << this->customer.getName() << "\n";
 
-result << this->processRentals();
+    result << this->processRentals();
 
-// add footer lines
-result << "Amount owed is " << this->totalAmount << "\n";
-result << "You earned " << this->frequentRenterPoints
-<< " frequent renter points";
+    // add footer lines
+    result << "Amount owed is " << this->totalAmount << "\n";
+    result << "You earned " << this->frequentRenterPoints
+    << " frequent renter points";
 
 return result.str();
 }

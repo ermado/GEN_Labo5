@@ -3,7 +3,6 @@
 #include "gmock/gmock.h"
 #include "Customer.h"
 #include "MockRental.h"
-#include "MockMovie.h"
 #include "MockCustomer.h"
 #include "Statement.h"
 
