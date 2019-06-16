@@ -5,6 +5,7 @@
 #include "MockRental.h"
 #include "MockCustomer.h"
 #include "Statement.h"
+#include "MockMovie.h"
 
 using ::testing::Return;
 

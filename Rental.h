@@ -31,11 +31,9 @@ getMovie() const { return *_movie; }
 inline Rental::Rental() = default;
 
 inline std::string Rental::toString(double amount) {
-
     std::ostringstream result;
     result << "\t" << getMovie().getTitle() << "\t"
            << amount << "\n";
-
     return result.str();
 }
 

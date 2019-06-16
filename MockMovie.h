@@ -44,8 +44,4 @@ public:
 };
 
 
-
-
-
-
 #endif //GEN_LABO5_MOCKMOVIE_H

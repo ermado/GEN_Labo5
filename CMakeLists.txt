@@ -38,6 +38,6 @@ endif()
 
 
 # Trivial example using gtest and gmock
-add_executable(GEN_Labo05 main.cpp CustomerTest.cpp Movie.cpp Customer.cpp Statement.cpp)
+add_executable(GEN_Labo05 main.cpp CustomerTest.cpp Movie.cpp Customer.cpp Statement.cpp MovieTest.cpp RentalTest.cpp StatementTest.cpp)
 target_link_libraries(GEN_Labo05 gtest gmock_main)
 add_test(NAME example_test COMMAND example)

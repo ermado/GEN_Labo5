@@ -1,1 +1,11 @@
-Idees de refactoring
+REFACTORING
+
+Customer.cpp : 
+- nombres magiques
+- extraire la boucle for dans une fonction
+
+Customer.h :
+- mettre les fonctions membres dans Customer.cpp
+
+Movie.h :
+- fonction setPriceCode() inutile (pour l'instant)

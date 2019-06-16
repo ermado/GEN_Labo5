@@ -15,7 +15,7 @@ using ::testing::ReturnPointee;
  * Test de la fonction processRentals de Statement.h
  * Dans notre idee, on voulait tester cette classe de cette facon, mais le push_back de *rental
  * ne focntionne pas correctement. Cause le manque de temps pour trouver une solution cette faille,
- * on a ete donc on obbligé à commenter ce test et tester les differents elements d'una eutre facon
+ * on a ete donc obligés à commenter ce test et tester les differents elements d'una eutre facon
  */
 /*TEST(StatementTestWMock, CanGetCorrectTotalFrequentPoints) {
 
@@ -35,7 +35,7 @@ using ::testing::ReturnPointee;
     EXPECT_CALL(customer, getRentals()).WillRepeatedly(ReturnPointee(rentalList));
 
     Statement statement(&customer);
-    EXPECT_EQ(statement.toString(), "Babar\t50\n");
+    EXPECT_EQ(statement.processRentals(), "Babar\t50\n");
 
 }*/
 
