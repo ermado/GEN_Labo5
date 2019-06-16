@@ -2,7 +2,7 @@
 #define GEN_LABO5_MOCKSTATEMENT_H
 
 #include "gmock/gmock.h"
-#include "statement.h"
+#include "Statement.h"
 
 class MockStatement : public Statement {
 

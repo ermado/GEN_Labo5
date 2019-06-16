@@ -10,7 +10,7 @@
 
 class MockRental : public Rental {
 public:
-    
+    MockRental(Movie* movie, int daysRented) {}
     MOCK_CONST_METHOD0(getMovie, const Movie&());
     MOCK_CONST_METHOD0(getDaysRented, int());
 

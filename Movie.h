@@ -23,6 +23,7 @@ static int movieTypeRenterPoints[] = {1, 2, 1};
 class Movie {
 public:
 
+    Movie();
     explicit Movie(const std::string& title);
     virtual std::string getTitle() const;
     virtual void setTitle(std::string title);

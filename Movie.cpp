@@ -6,6 +6,7 @@ using namespace std;
  * MainClass Implementations
  **************************************************************************************************/
 
+Movie::Movie() {}
 
 Movie::Movie( const string& title) : _title( title ) {}
 
