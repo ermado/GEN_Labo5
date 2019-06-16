@@ -10,6 +10,7 @@ public:
 
     int getDaysRented() const;
     const Movie& getMovie() const;
+    std::string toString(double amount);
 
 private:
     Movie* _movie;
@@ -28,6 +29,15 @@ inline const Movie& Rental::
 getMovie() const { return *_movie; }
 
 inline Rental::Rental() = default;
+
+inline std::string Rental::toString(double amount) {
+
+    std::ostringstream result;
+    result << "\t" << getMovie().getTitle() << "\t"
+           << amount << "\n";
+
+    return result.str();
+}
 
 
 #endif // RENTAL_H

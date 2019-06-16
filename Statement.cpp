@@ -31,8 +31,8 @@ std::string Statement::processRentals() {
         this->frequentRenterPoints += each.getMovie().getRenterPoints();
 
         // show figures for this rental
-        result << "\t" << each.getMovie().getTitle() << "\t"
-               << amountForThisRental << "\n";
+        result << each.toString(amountForThisRental);
+
         this->totalAmount += amountForThisRental;
     }
     return result.str();
