@@ -4,10 +4,15 @@
 #include "Customer.h"
 #include "MockRental.h"
 #include "MockMovie.h"
+#include "MockCustomer.h"
+#include "Statement.h"
 
 using ::testing::Return;
 
-TEST(StatementTest, CanWriteStatementForCustomer) {
+/**
+ * Test de la fonction statement de Customer (sans Mocking)
+ */
+TEST(StatementTest, CanWriteFullStatementForCustomer) {
 
     Customer customer("Edoardo Carpita");
 
@@ -28,22 +33,4 @@ TEST(StatementTest, CanWriteStatementForCustomer) {
     ASSERT_EQ(st, "Rental Record for Edoardo Carpita\n\tTop Gun	47\n\tTitanic	12\n\tInvade Poland for dummies	222\n"
             "Amount owed is 281\n"
             "You earned 4 frequent renter points");
-}
-
-TEST(MovieTypesTest, CorrectNumberRentedPoints) {
-
-    RegularMovie rMov("Inception");
-    NewReleaseMovie nrMov("It 2");
-    ChildrenMovie chMov("The Lion King");
-
-    ASSERT_EQ(rMov.getRenterPoints(), 1);
-    ASSERT_EQ(nrMov.getRenterPoints(), 2);
-    ASSERT_EQ(chMov.getRenterPoints(), 1);
-}
-
-int main(int argc, char **argv) {
-    ::testing::InitGoogleTest();
-    //::testing::InitGoogleMock(&argc, argv);
-
-    return RUN_ALL_TESTS();
 }
