@@ -1,12 +1,8 @@
-//
-// Created by Edd993Surface on 07/06/2019.
-//
-
 #ifndef GEN_LABO5_MOCKRENTAL_H
 #define GEN_LABO5_MOCKRENTAL_H
 
 #include "gmock/gmock.h"
-#include "rental.h"
+#include "Rental.h"
 
 class MockRental : public Rental {
 public:

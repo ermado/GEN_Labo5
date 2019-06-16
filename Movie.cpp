@@ -12,10 +12,6 @@ Movie::Movie( const string& title) : _title( title ) {}
 
 string Movie::getTitle() const { return _title; }
 
-void Movie::setTitle(std::string title) {
-    this->_title = title;
-}
-
 
 /***************************************************************************************************
  * SubClass Implementations

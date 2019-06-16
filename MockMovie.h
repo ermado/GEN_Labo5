@@ -1,7 +1,3 @@
-//
-// Created by Edd993Surface on 16/06/2019.
-//
-
 #ifndef GEN_LABO5_MOCKMOVIE_H
 #define GEN_LABO5_MOCKMOVIE_H
 

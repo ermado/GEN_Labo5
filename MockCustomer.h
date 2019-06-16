@@ -1,7 +1,3 @@
-//
-// Created by Marion on 07.06.2019.
-//
-
 #ifndef GEN_LABO5_MOCKCUSTOMER_H
 #define GEN_LABO5_MOCKCUSTOMER_H
 

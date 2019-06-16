@@ -26,7 +26,6 @@ public:
     Movie();
     explicit Movie(const std::string& title);
     virtual std::string getTitle() const;
-    virtual void setTitle(std::string title);
     virtual double getAmount(int daysRented) const = 0;
     virtual int getRenterPoints() const = 0;
 
