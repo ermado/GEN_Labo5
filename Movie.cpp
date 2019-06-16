@@ -1,13 +1,15 @@
 #include "Movie.h"
 
+using namespace std;
+
 /***************************************************************************************************
  * MainClass Implementations
  **************************************************************************************************/
 
 
-Movie::Movie( const std::string& title) : _title( title ) {}
+Movie::Movie( const string& title) : _title( title ) {}
 
-std::string Movie::getTitle() const { return _title; }
+string Movie::getTitle() const { return _title; }
 
 
 /***************************************************************************************************
@@ -15,7 +17,7 @@ std::string Movie::getTitle() const { return _title; }
  **************************************************************************************************/
 
 
-RegularMovie::RegularMovie(const std::string& title) : Movie(title) {}
+RegularMovie::RegularMovie(const string& title) : Movie(title) {}
 
 inline double RegularMovie::getAmount(int daysRented) const {
     double amount = movieTypeBaseAmount[REGULAR];
@@ -25,24 +27,24 @@ inline double RegularMovie::getAmount(int daysRented) const {
 }
 
 inline int RegularMovie::getRenterPoints() const {
-    return 1;
+    return movieTypeRenterPoints[REGULAR];
 }
 
 
 
-NewReleaseMovie::NewReleaseMovie(const std::string& title) : Movie(title) {}
+NewReleaseMovie::NewReleaseMovie(const string& title) : Movie(title) {}
 
 inline double NewReleaseMovie::getAmount(int daysRented) const {
     return daysRented * movieTypeBaseAmount[NEW_RELEASE];
 }
 
 inline int NewReleaseMovie::getRenterPoints() const {
-    return 2;
+    return movieTypeRenterPoints[NEW_RELEASE];
 }
 
 
 
-ChildrenMovie::ChildrenMovie(const std::string& title) : Movie(title) {}
+ChildrenMovie::ChildrenMovie(const string& title) : Movie(title) {}
 
 inline double ChildrenMovie::getAmount(int daysRented) const {
     double amount = movieTypeBaseAmount[CHILDRENS];
@@ -53,6 +55,6 @@ inline double ChildrenMovie::getAmount(int daysRented) const {
 }
 
 inline int ChildrenMovie::getRenterPoints() const {
-    return 1;
+    return movieTypeRenterPoints[CHILDRENS];
 }
 

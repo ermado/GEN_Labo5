@@ -14,6 +14,7 @@
 enum movieType {REGULAR, NEW_RELEASE, CHILDRENS};
 static double movieTypeBaseAmount[] = {2, 3, 1.5};
 static double movieTypeDayLimit[] = {2, 0, 3};
+static int movieTypeRenterPoints[] = {1, 2, 1};
 
 /***************************************************************************************************
  * MainClass
